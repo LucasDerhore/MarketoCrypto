@@ -1,0 +1,36 @@
+.nav-container {
+  width: 100% !important;
+  height: 80px;
+  margin: 0;
+  z-index: 99;
+  position: relative;
+  background-color: rgb(27, 27, 27);
+  display: flex;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+img {
+  width: 50px;
+  height: 50px;
+}
+.logo {
+  margin: 0 0 0 15px;
+}
+
+.nav-link {
+  height: 50px !important;
+  margin-top: 10px !important;
+  font-size: 25px !important;
+  right: 0 !important;
+  text-align: center !important;
+  margin-left: 400px !important;
+}
+
+h3.ant-typography {
+  margin-bottom: 0px;
+}
