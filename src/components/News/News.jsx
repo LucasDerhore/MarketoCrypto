@@ -16,11 +16,11 @@ const News = ({ simplified }) => {
   const { data } = useGetCryptosQuery(100);
   const { data: cryptoNews } = useGetCryptoNewsQuery({
     newsCategory,
-    count: simplified ? 6 : 12,
+    count: simplified ? 3 : 12,
   });
 
   if (!cryptoNews?.value) return "Loading...";
-
+  console.log(cryptoNews);
   return (
     <Row gutter={[24, 24]}>
       {!simplified && (
@@ -74,7 +74,7 @@ const News = ({ simplified }) => {
                       news.provider[0]?.image?.thumbnail?.contentUrl ||
                       demoImage
                     }
-                    alt="n"
+                    alt=""
                   />
                   <Text className="provider-name">
                     {news.provider[0]?.name}
