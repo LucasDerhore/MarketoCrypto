@@ -39,20 +39,20 @@ const Cryptocurrencies = (simplified) => {
           onChange={(e) => setSearchTerm(e.target.value)}
         />
       </div>
-      {/*<Row gutter={[16, 16]} className="crypto-card-container">
-        {cryptos?.map((currency) => (
-          <Col span={6} className="crypto-card" key={currency.uuid}>
-            <Link to={`/crypto/${currency.uuid}`}>
-              <Card
-                title={`${currency.rank}. ${currency.name}`}
-                extra={<img className="crypto-image" src={currency.iconUrl} />}
-                hoverable
-              ></Card>
-            </Link>
-          </Col>
-        ))}
-        </Row>*/}
-      <Table dataSource={dataSource} columns={columns} />;
+      {/* <Row gutter={[16, 16]} className="crypto-card-container"> */}
+      {cryptos?.map((currency) => (
+        <Col span={6} className="crypto-card" key={currency.uuid}>
+          <Link to={`/crypto/${currency.uuid}`}>
+            <Card
+              title={`${currency.rank}. ${currency.name}`}
+              extra={<img className="crypto-image" src={currency.iconUrl} />}
+              hoverable
+            ></Card>
+          </Link>
+        </Col>
+      ))}
+      {/* </Row> */}
+      {/* <Table dataSource={dataSource} columns={columns} />; */}
     </>
   );
 };
