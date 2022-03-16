@@ -21,6 +21,8 @@ import {
 } from "../../services/cryptoApi";
 import "../CryptoDetails/CryptoDetail.scss";
 
+import LineChart from "../Linechart/LineChart";
+
 const { Title, Text } = Typography;
 const { Option } = Select;
 
@@ -47,9 +49,7 @@ const CryptoDetails = () => {
     { title: "Rank", value: cryptoDetails?.rank, icon: <NumberOutlined /> },
     {
       title: "24h Volume",
-      value: `$ ${
-        cryptoDetails?.["24hvolume"] && millify(cryptoDetails?.volume)
-      }`,
+      value: `$ ${cryptoDetails?.volume && millify(cryptoDetails?.volume)}`,
       icon: <ThunderboltOutlined />,
     },
     {
@@ -164,6 +164,11 @@ const CryptoDetails = () => {
           ))}
         </Col>
       </Col>
+      <LineChart
+        coinHistory={coinHistory}
+        currentPrice={millify(cryptoDetails?.price)}
+        coinName={cryptoDetails?.name}
+      />
       <Col className="coin-desc-link">
         <Row className="coin-desc">
           <Title level={3} className="coin-details-heading">
