@@ -22,7 +22,7 @@ const Cryptocurrencies = (simplified) => {
     { title: "Value", dataIndex: "value", key: "value" },
   ];
 
-  console.log(cryptosList);
+  // console.log(cryptosList);
   useEffect(() => {
     const filteredData = cryptosList?.data?.coins.filter((coin) =>
       coin.name.toLowerCase().includes(searchTerm.toLowerCase())
