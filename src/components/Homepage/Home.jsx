@@ -4,6 +4,9 @@ import { Typography, Row, Col, Statistic } from "antd";
 import { Link } from "react-router-dom";
 
 import News from "../News/News";
+import Cryptocurrencies from "../Cryptocurrencies/Cryptocurrencies";
+
+import "../Homepage/Home.scss";
 
 const { Title } = Typography;
 
@@ -16,23 +19,25 @@ const Home = () => {
   return (
     <>
       <div className="home-cryptos">
-        <Title level={2} className="heading" style={{ textAlign: "center" }}>
+        <Title level={2} className="heading">
           Top 10 Best Cryptos moment
         </Title>
+        <div>
+          <Cryptocurrencies simplified />
+        </div>
+        <Title level={3}>
+          <Link to="/cryptocurrencies">Show more</Link>
+        </Title>
         <div className="home-heading-container">
-          <Title
-            level={2}
-            className="home-title"
-            style={{ textAlign: "center" }}
-          >
+          <Title level={2} className="home-title">
             Latest Crypto News
           </Title>
         </div>
         <News simplified />
+        <Title level={3}>
+          <Link to="/news">Show more</Link>
+        </Title>
       </div>
-      <Title level={3} style={{ textAlign: "center" }}>
-        <Link to="/news">Show more</Link>
-      </Title>
     </>
   );
 };

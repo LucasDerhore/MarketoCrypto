@@ -1,6 +1,8 @@
-.home-heading-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 40px;
+.home-cryptos {
+  h2.ant-typography {
+    text-align: center !important;
+  }
+  h3.ant-typography {
+    text-align: center !important;
+  }
 }
