@@ -2,6 +2,7 @@ import React from "react";
 import "../Linechart/LineChart.scss";
 import { Line } from "react-chartjs-2";
 import { Col, Row, Typography } from "antd";
+import "chartjs-adapter-date-fns";
 
 const { Title } = Typography;
 
@@ -33,6 +34,32 @@ const LineChart = ({ coinHistory, currentPrice, coinName }) => {
 
   const options = {
     scales: {
+      xAxes: [
+        {
+          type: "time",
+          time: {
+            displayFormats: {
+              millisecond: "MMM DD",
+              second: "MMM DD",
+              minute: "MMM DD",
+              hour: "MMM DD",
+              day: "MMM DD",
+              week: "MMM DD",
+              month: "MMM DD",
+              quarter: "MMM DD",
+              year: "MMM DD",
+            },
+          },
+          ticks: {
+            callback: function ({ coinHistory }) {
+              return new Date(coinHistory).toLocaleDateString("de-DE", {
+                month: "short",
+                year: "numeric",
+              });
+            },
+          },
+        },
+      ],
       yAxes: [
         {
           ticks: {

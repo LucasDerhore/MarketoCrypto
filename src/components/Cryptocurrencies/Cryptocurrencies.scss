@@ -1,18 +1,10 @@
 @import "~antd/dist/antd.css";
+//@import "~antd/dist/antd.dark.css";
 
 .search-crypto {
   width: 250px;
   margin: 20px auto 30px auto;
 }
 
-.crypto-card-container {
-  min-height: 65vh !important;
-
-  .crypto-card {
-    border: 1px solid;
-    min-width: 250px;
-    .crypto-image {
-      width: 35px;
-    }
-  }
+Table {
 }
