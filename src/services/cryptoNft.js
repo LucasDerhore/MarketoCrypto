@@ -2,7 +2,7 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
 const cryptoNftHeaders = {
   "x-rapidapi-host": "top-nft-collections-and-sales.p.rapidapi.com",
-  "x-rapidapi-key": "9761a6ba9bmsh6013cb49db4a39bp12e7f9jsn9fca9409d5b0",
+  "x-rapidapi-key": process.env.REACT_APP_TOKENNFT,
 };
 
 const baseUrl = "https://top-nft-collections-and-sales.p.rapidapi.com";
