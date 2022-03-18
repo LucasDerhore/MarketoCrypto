@@ -1,0 +1,38 @@
+h2.ant-typography {
+  text-align: center !important;
+}
+
+.select-news {
+  width: 180px;
+}
+
+.news-card {
+  min-height: 300px !important;
+
+  .news-container {
+    display: flex !important;
+    justify-content: space-between !important;
+  }
+
+  .news-title {
+    width: 70%;
+  }
+
+  .news-container .img {
+    width: 100px;
+    height: 100px;
+  }
+
+  .provider-container {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .provider-name {
+    margin-left: 10px;
+  }
+
+  p {
+    color: black !important;
+  }
+}
