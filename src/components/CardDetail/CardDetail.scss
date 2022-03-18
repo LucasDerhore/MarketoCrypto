@@ -1,3 +1,16 @@
-.maCard {
-  background-color: red;
+.nft-card {
+  background-color: rgb(255, 255, 255);
+  border: 1px solid #40a9ff;
+  border-radius: 15px;
+  margin-bottom: 10px;
+  margin-left: 15px;
+  margin-right: 15px;
+  min-width: 250px;
+  width: 35px;
+
+  h2 {
+    color: #40a9ff;
+    font-weight: 700 !important;
+    margin-top: 20px !important;
+  }
 }

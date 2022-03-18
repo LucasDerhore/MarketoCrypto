@@ -1,17 +1,19 @@
 import React from "react";
 import { Typography, Row, Col, Statistic, Card } from "antd";
 import { Link } from "react-router-dom";
+import "./CardDetail.scss";
 
 function CardDetail(props) {
   console.log(props);
 
   return (
-    <div className="maCard">
-      <div className="collection-name">{props.datas.collection_name}</div>
-      <a href={props.datas.collection_url}>Aller vers la collection</a>
-      <div className="collection-floor">{props.datas.floor}</div>
-      <div className="collection-volume">{props.datas.volume}$</div>
-    </div>
+    <Card className="nft-card">
+      <a href={props.datas.collection_url}>
+        <h2>{props.datas.collection_name}</h2>
+      </a>
+      <h3>Floor : {props.datas.floor}</h3>
+      <p>Volume : {props.datas.volume}$</p>
+    </Card>
   );
 }
 
