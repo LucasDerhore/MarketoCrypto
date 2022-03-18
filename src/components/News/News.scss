@@ -1,4 +1,4 @@
-h2.news-title .style {
+h2.ant-typography {
   text-align: center !important;
 }
 
@@ -13,6 +13,7 @@ h2.news-title .style {
     display: flex !important;
     justify-content: space-between !important;
   }
+
   .news-title {
     width: 70%;
   }
@@ -29,5 +30,9 @@ h2.news-title .style {
 
   .provider-name {
     margin-left: 10px;
+  }
+
+  p {
+    color: black !important;
   }
 }

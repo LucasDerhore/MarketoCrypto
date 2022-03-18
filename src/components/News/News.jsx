@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { Select, Typography, Row, Col, Avatar, Card } from "antd";
 import moment from "moment";
 
+import "../News/News.scss";
+
 import { useGetCryptosQuery } from "../../services/cryptoApi";
 import { useGetCryptoNewsQuery } from "../../services/cryptoNews";
 
@@ -40,11 +42,7 @@ const News = ({ simplified }) => {
               <Option value={currency.name}>{currency.name}</Option>
             ))}
           </Select>
-          <Title
-            level={2}
-            className="news-title"
-            style={{ textAlign: "center" }}
-          >
+          <Title level={2} className="news-title">
             Last News
           </Title>
         </Col>
@@ -62,7 +60,7 @@ const News = ({ simplified }) => {
                   alt=""
                 />
               </div>
-              <p style={{ color: "black" }}>
+              <p>
                 {news.description > 100
                   ? `${news.description.substring(0, 100)}...`
                   : news.description}

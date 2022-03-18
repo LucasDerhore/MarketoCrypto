@@ -8,7 +8,7 @@ import "../Cryptocurrencies/Cryptocurrencies.scss";
 import { useGetCryptosQuery } from "../../services/cryptoApi";
 
 const Cryptocurrencies = (simplified) => {
-  const count = simplified ? 10 : 100;
+  const count = simplified ? 50 : 100;
   const { data: cryptosList, isFetching } = useGetCryptosQuery(count);
   const [cryptos, setCryptos] = useState(cryptosList?.data?.coins);
   const [searchTerm, setSearchTerm] = useState("");
@@ -22,6 +22,7 @@ const Cryptocurrencies = (simplified) => {
     { title: "Daily Change", dataIndex: "daily change", key: "daily change" },
   ];
 
+  // console.log(cryptosList);
   useEffect(() => {
     const filteredData = cryptosList?.data?.coins.filter((coin) =>
       coin.name.toLowerCase().includes(searchTerm.toLowerCase())
@@ -39,7 +40,12 @@ const Cryptocurrencies = (simplified) => {
         />
       </div>
 
-      <Table columns={columns} dataSource={cryptos}></Table>
+      <Table
+        className="table-crypto"
+        rowClassName="table-cryptoDetails"
+        columns={columns}
+        dataSource={cryptos}
+      ></Table>
     </>
   );
 };
