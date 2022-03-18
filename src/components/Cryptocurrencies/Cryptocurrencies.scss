@@ -10,17 +10,19 @@
   color: rgba(0, 0, 0, 0.85);
   font-weight: 500;
   text-align: left;
-  background: aquamarine;
+  background: #82ccdd;
 }
-.table-crypto {
-  border-radius: 15px;
-  width: 75%;
-  margin: auto;
-  padding: auto;
-  box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.73);
-  -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.73);
-  -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.73);
-  .table-cryptoDetails {
-    background-color: #efefef;
+.cryptos-currency {
+  .table-crypto {
+    border-radius: 15px;
+    width: 75%;
+    margin: auto;
+    padding: auto;
+    box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.73);
+    -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.73);
+    -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.73);
+    .table-cryptoDetails {
+      background-color: #efefef;
+    }
   }
 }

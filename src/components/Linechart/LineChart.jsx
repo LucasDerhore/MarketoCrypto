@@ -16,7 +16,9 @@ const LineChart = ({ coinHistory, currentPrice, coinName }) => {
 
   for (let i = 0; i < coinHistory?.data?.history?.length; i += 1) {
     coinTimestamp.push(
-      new Date(coinHistory?.data?.history[i].timestamp).toLocaleDateString()
+      new Date(
+        coinHistory?.data?.history[i].timestamp * 1000
+      ).toLocaleDateString()
     );
   }
   const data = {
@@ -34,32 +36,6 @@ const LineChart = ({ coinHistory, currentPrice, coinName }) => {
 
   const options = {
     scales: {
-      xAxes: [
-        {
-          type: "time",
-          time: {
-            displayFormats: {
-              millisecond: "MMM DD",
-              second: "MMM DD",
-              minute: "MMM DD",
-              hour: "MMM DD",
-              day: "MMM DD",
-              week: "MMM DD",
-              month: "MMM DD",
-              quarter: "MMM DD",
-              year: "MMM DD",
-            },
-          },
-          ticks: {
-            callback: function ({ coinHistory }) {
-              return new Date(coinHistory).toLocaleDateString("de-DE", {
-                month: "short",
-                year: "numeric",
-              });
-            },
-          },
-        },
-      ],
       yAxes: [
         {
           ticks: {
