@@ -9,6 +9,7 @@ import {
   LineChart,
   Navbar,
   Footer,
+  MetaMask,
 } from "./components";
 
 const App = () => {
@@ -34,6 +35,7 @@ const App = () => {
             <Route exact path="/news" element={<News />} />
             <Route exact path="/nft" element={<Nft />} />
             <Route exact path="/linechart" element={<LineChart />} />
+            <Route exact path="/metamask" element={<MetaMask />} />
           </Routes>
         </div>
       </div>

@@ -1,15 +1,9 @@
 import React from "react";
 import image from "../../images/cryptocurrency.png";
+import image_1 from "../../images/metamask.svg";
 import "../Navbar/Navbar.scss";
-import { Menu, Typography, Avatar } from "antd";
+import { Typography, Avatar } from "antd";
 import { Link } from "react-router-dom";
-
-import {
-  HomeOutlined,
-  MoneyCollectOutlined,
-  BulbOutlined,
-  FundOutlined,
-} from "@ant-design/icons";
 
 const Navbar = () => {
   return (
@@ -34,6 +28,12 @@ const Navbar = () => {
           </Link>
           <Link to="/NFT" style={{ marginRight: "200px", fontSize: "20px" }}>
             NFT
+          </Link>
+          <Link
+            to="/Metamask"
+            style={{ marginRight: "200px", fontSize: "20px" }}
+          >
+            <Avatar src={image_1} size="large" />
           </Link>
         </div>
       </div>
