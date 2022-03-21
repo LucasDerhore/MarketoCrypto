@@ -3,6 +3,7 @@ import { Typography, Row, Col, Statistic, Card } from "antd";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import "./NFT.scss";
+import "../News/News.scss";
 
 import { useGetNftQuery } from "../../services/cryptoNft";
 import CardDetail from "../CardDetail/CardDetail";
@@ -12,7 +13,7 @@ const { Title } = Typography;
 
 const Nft = ({ simplified }) => {
   // const { data: nftsList, isFetching } = useGetNftQuery({});
-
+  let i = 0;
   const nftsList = [
     {
       collection_name: "CryptoPunks",
@@ -141,7 +142,8 @@ const Nft = ({ simplified }) => {
         </div>
         <Row gutter={[16, 16]} className="nft-card-container">
           {nftsList.map((e) => {
-            return <CardDetail datas={e} />;
+            i++;
+            return <CardDetail datas={e} key={i} />;
           })}
         </Row>
       </div>

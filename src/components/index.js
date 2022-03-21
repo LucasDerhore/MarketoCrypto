@@ -6,3 +6,4 @@ export { default as Home } from "../components/Homepage/Home";
 export { default as Nft } from "../components/NFT/NFT";
 export { default as LineChart } from "../components/Linechart/LineChart";
 export { default as Footer } from "../components/Footer/Footer";
+export { default as TableImage } from "../components/TableImage/TableImage";
