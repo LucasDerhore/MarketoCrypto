@@ -12,6 +12,24 @@
   display: flex;
   align-items: center;
   width: 100%;
+
+  a {
+    color: #da9e37;
+  }
+
+  a:hover {
+    color: #a83730;
+  }
+
+  h3 {
+    a {
+      color: #da9e37 !important;
+    }
+
+    a:hover {
+      color: #a83730 !important;
+    }
+  }
 }
 
 img {

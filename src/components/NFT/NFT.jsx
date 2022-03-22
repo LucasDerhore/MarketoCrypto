@@ -102,7 +102,7 @@ const Nft = ({ simplified }) => {
       <div className="main-container">
         <div className="title-container">
           <Title level={1} className="heading-nft">
-            Introduce NFT
+            NFT Discovery
           </Title>
           <Title level={2} className="min-heading-nft">
             What is an NFT ?
@@ -143,7 +143,7 @@ const Nft = ({ simplified }) => {
         <Row gutter={[16, 16]} className="nft-card-container">
           {nftsList.map((e) => {
             i++;
-            return <CardDetail datas={e} key={i} />;
+            return <CardDetail datas={e} data-key={i} />;
           })}
         </Row>
       </div>
