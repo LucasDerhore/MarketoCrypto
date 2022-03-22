@@ -10,17 +10,30 @@
   color: rgba(0, 0, 0, 0.85);
   font-weight: 500;
   text-align: left;
-  background: #82ccdd;
+  background: #1890ff;
 }
+.ant-table-pagination > * {
+  flex: none;
+  margin-right: 10px;
+}
+
+.top-volume {
+  width: 50%;
+}
+
 .cryptos-currency {
+  display: flex;
   .table-crypto {
     border-radius: 15px;
-    width: 75%;
-    margin: auto;
+    width: 100%;
+    margin: 50px;
     padding: auto;
-    box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.73);
-    -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.73);
-    -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.73);
+    box-shadow: 5px 2px 18px 5px rgba(0, 0, 0, 0.64);
+    -webkit-box-shadow: 5px 2px 18px 5px rgba(0, 0, 0, 0.64);
+    -moz-box-shadow: 5px 2px 18px 5px rgba(0, 0, 0, 0.64);
+    font-family: cursive;
+    background: #1890ff;
+
     .table-cryptoDetails {
       background-color: #efefef;
     }

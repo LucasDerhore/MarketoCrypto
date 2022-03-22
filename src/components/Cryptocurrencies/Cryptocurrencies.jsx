@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import "chartjs-adapter-date-fns";
 import millify from "millify";
 import { Input, Table } from "antd";
 import { Link } from "react-router-dom";
@@ -7,7 +7,7 @@ import "../Cryptocurrencies/Cryptocurrencies.scss";
 
 import { useGetCryptosQuery } from "../../services/cryptoApi";
 
-const Cryptocurrencies = (simplified) => {
+const Cryptocurrencies = ({ simplified }) => {
   const count = simplified ? 10 : 100;
   const { data: cryptosList, isFetching } = useGetCryptosQuery(count);
   const [cryptos, setCryptos] = useState(cryptosList?.data?.coins);
@@ -55,12 +55,15 @@ const Cryptocurrencies = (simplified) => {
   if (isFetching) return "Loading..";
   return (
     <>
-      <div className="search-crypto">
-        <Input
-          placeholder="search Cryptocurrency"
-          onChange={(e) => setSearchTerm(e.target.value)}
-        />
-      </div>
+      {!simplified && (
+        <div className="search-crypto">
+          <Input
+            placeholder="search Cryptocurrency"
+            onChange={(e) => setSearchTerm(e.target.value)}
+          />
+        </div>
+      )}
+
       <div className="cryptos-currency">
         <Table
           className="table-crypto"
