@@ -87,12 +87,6 @@ const Nft = ({ simplified }) => {
       floor: 986,
       volume: 132456,
     },
-    {
-      collection_name: "Bored Ape Chemistry Club",
-      collection_url: "google.com",
-      floor: 986,
-      volume: 132456,
-    },
   ];
 
   //if (isFetching) return "Loading...";
@@ -101,9 +95,6 @@ const Nft = ({ simplified }) => {
     <>
       <div className="main-container">
         <div className="title-container">
-          <Title level={1} className="heading-nft">
-            NFT Discovery
-          </Title>
           <Title level={2} className="min-heading-nft">
             What is an NFT ?
           </Title>
@@ -129,15 +120,15 @@ const Nft = ({ simplified }) => {
               to create a digital ownership certificate for a unique physical
               asset, though this is currently not common.
             </Col>
-            <Col className="col-text-heading">
+            {/* <Col className="col-text-heading">
               NFTs became a popular investment in 2021, even though they’ve been
               around since 2014. As cryptocurrency investing exploded, so did
               the idea of taking certain digital assets and selling them to
               investors to buy online.
-            </Col>
+            </Col> */}
           </Col>
           <Title level={2} className="max-heading-nft">
-            NFTs collections
+            Top 12 NFTs collections
           </Title>
         </div>
         <Row gutter={[16, 16]} className="nft-card-container">

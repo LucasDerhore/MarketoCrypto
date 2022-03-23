@@ -1,10 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { Typography, Row, Col, Statistic, Card } from "antd";
-import { Link } from "react-router-dom";
-import TableImages from "../../components/TableImage/TableImage";
+import { Typography, Card } from "antd";
 import "./CardDetail.scss";
-
-const { Text, Title } = Typography;
 
 function CardDetail(props) {
   const [index, setIndex] = useState(0);
