@@ -13,6 +13,7 @@ import {
 } from "./components";
 import { Paper, Switch } from "@material-ui/core";
 import { ThemeProvider, createTheme } from "@material-ui/core/styles";
+import "./App.scss";
 
 const App = () => {
   console.log(process.env.REACT_APP_TOKENCOINRANKING);
@@ -58,9 +59,9 @@ const App = () => {
                 <Route exact path="/metamask" element={<MetaMask />} />
               </Routes>
             </div>
-          </div>
-          <div className="footer">
-            <Footer />
+            <div className="footer">
+              <Footer />
+            </div>
           </div>
         </div>
       </Paper>

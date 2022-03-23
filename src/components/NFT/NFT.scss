@@ -1,4 +1,6 @@
 .main-container {
+  height: 100%;
+
   .title-container {
     width: 100%;
     margin-top: 25px;
@@ -33,7 +35,8 @@
 
   .nft-card-container {
     min-height: 65vh !important;
-    margin-left: 100px !important;
+    margin-left: 250px !important;
+    margin-bottom: 30px;
   }
 
   .col-text {

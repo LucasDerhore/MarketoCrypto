@@ -14,25 +14,11 @@ const Navbar = () => {
           <Link to="/">Marketo Crypto</Link>
         </Typography.Title>
         <div className="nav-link">
-          <Link to="/" style={{ marginRight: "200px", fontSize: "20px" }}>
-            Home
-          </Link>
-          <Link
-            to="/Cryptocurrencies"
-            style={{ marginRight: "200px", fontSize: "20px" }}
-          >
-            Cryptos
-          </Link>
-          <Link to="/News" style={{ marginRight: "200px", fontSize: "20px" }}>
-            News
-          </Link>
-          <Link to="/NFT" style={{ marginRight: "200px", fontSize: "20px" }}>
-            NFT
-          </Link>
-          <Link
-            to="/Metamask"
-            style={{ marginRight: "200px", fontSize: "20px" }}
-          >
+          <Link to="/">Home</Link>
+          <Link to="/Cryptocurrencies">Cryptos</Link>
+          <Link to="/News">News</Link>
+          <Link to="/NFT">NFT</Link>
+          <Link to="/Metamask">
             <Avatar src={image_1} size="large" />
           </Link>
         </div>
