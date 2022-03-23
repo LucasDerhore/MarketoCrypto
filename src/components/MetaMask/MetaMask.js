@@ -31,7 +31,7 @@ function MetaMask() {
         </Title>
         <div className="metamask-card">
           <div className="metamask-text">
-            <a href="https://metamask.io/">
+            <a href="https://metamask.io/" target="_blank" rel="noreferrer">
               <Avatar src={image_1} size="large" />
             </a>
             <p>
@@ -64,7 +64,11 @@ function MetaMask() {
               <Title level={2} className="platform-title">
                 What is Binance used for?
               </Title>
-              <a href="https://www.binance.com/">
+              <a
+                href="https://www.binance.com/"
+                target="_blank"
+                rel="noreferrer"
+              >
                 <Avatar src={image_2} size="large" />
               </a>
               <p>
@@ -83,7 +87,7 @@ function MetaMask() {
               <Title level={2} className="platform-title">
                 What is OpenSea used for?
               </Title>
-              <a href="https://opensea.io/">
+              <a href="https://opensea.io/" target="_blank" rel="noreferrer">
                 <Avatar src={image_3} size="large" />
               </a>
               <p>

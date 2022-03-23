@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Select, Typography, Row, Col, Avatar, Card } from "antd";
 import moment from "moment";
 
+import image from "../../images/cryptocurrency.png";
 import "../News/News.scss";
 
 import { useGetCryptosQuery } from "../../services/cryptoApi";
@@ -21,30 +22,39 @@ const News = ({ simplified }) => {
     count: simplified ? 3 : 12,
   });
 
-  if (!cryptoNews?.value) return "Loading...";
+  if (!cryptoNews?.value)
+    return (
+      <div className="loading-news">
+        <h1>
+          Loading... <Avatar className="loading-img" src={image} size="large" />
+        </h1>
+      </div>
+    );
   console.log(cryptoNews);
   return (
     <Row gutter={[24, 24]}>
       {!simplified && (
         <Col span={24}>
-          <Select
-            showSearch
-            className="select-news"
-            placeholder="Select a Crypto"
-            optionFilterProp="children"
-            onChange={(value) => setNewscategory(value)}
-            filterOption={(input, option) =>
-              option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
-            }
-          >
-            <Option value="Cryptocurrency">Cryptocurrency</Option>
-            {data?.data?.coins?.map((currency) => (
-              <Option value={currency.name}>{currency.name}</Option>
-            ))}
-          </Select>
-          <Title level={2} className="news-title">
-            Last News
-          </Title>
+          <div className="news-select-container">
+            <Title level={1} className="news-title">
+              Some latest Cryptocurrency news
+            </Title>
+            <Select
+              showSearch
+              className="select-news"
+              placeholder="Select a Crypto"
+              optionFilterProp="children"
+              onChange={(value) => setNewscategory(value)}
+              filterOption={(input, option) =>
+                option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
+              }
+            >
+              <Option value="Cryptocurrency">Cryptocurrency</Option>
+              {data?.data?.coins?.map((currency) => (
+                <Option value={currency.name}>{currency.name}</Option>
+              ))}
+            </Select>
+          </div>
         </Col>
       )}
       {cryptoNews.value.map((news, i) => (
@@ -52,7 +62,7 @@ const News = ({ simplified }) => {
           <Card hoverable className="news-card">
             <a href={news.url} target="_blank" rel="noreferrer">
               <div className="news-container">
-                <Title className="news-title" level={4}>
+                <Title className="news-title1" level={3}>
                   {news.name}
                 </Title>
                 <img
