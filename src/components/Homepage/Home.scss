@@ -1,17 +1,79 @@
-.global-stats-crypto {
-  text-align: center;
-  font-family: cursive;
-  margin: 30px;
-  .ant-row {
-    margin: 10px;
-  }
-}
+.home-main {
+  width: 100vw;
+  // .home-main-heading {
+  //   display: flex;
+  //   .what-and-why-crypto {
+  //     width: 60%;
+  //     box-shadow: 5px 4px 14px -3px rgba(0, 0, 0, 0.31);
+  //     -webkit-box-shadow: 5px 4px 14px -3px rgba(0, 0, 0, 0.31);
+  //     -moz-box-shadow: 5px 4px 14px -3px rgba(0, 0, 0, 0.31);
+  //     margin: auto;
+  //     background-color: #efefef;
+  //     text-align: center;
+  //     font-size: 30px;
+  //     .title-heading {
+  //       padding: 15px;
+  //       color: #a83730;
+  //     }
+  //     p {
+  //       padding: 15px;
+  //       em {
+  //         color: #c34a36;
+  //       }
+  //     }
+  //   }
+  // }
+  .home-cryptos {
+    margin: 25px;
 
-.home-cryptos {
-  h2.ant-typography {
-    text-align: center !important;
+    .home-title-crypto {
+      letter-spacing: 2px;
+      font-size: 50px;
+      color: #a83730;
+      text-align: center;
+    }
+    a {
+      padding: 10px;
+      border-radius: 15px;
+      width: 150px;
+      text-align: center;
+      position: relative;
+      color: #da9e37;
+    }
+    a:hover {
+      color: #a83730;
+    }
   }
-  h3.ant-typography {
-    text-align: center !important;
+  .home-news {
+    margin: 25px;
+
+    .home-title-news {
+      letter-spacing: 2px;
+      font-size: 50px;
+      color: #a83730;
+      text-align: center;
+    }
+    a {
+      padding: 10px;
+      border-radius: 15px;
+      width: 150px;
+      text-align: center;
+      color: #da9e37;
+      position: relative;
+    }
+  }
+  .card-news {
+    border: none;
+    .ant-card-body {
+      row-gap: 24px;
+      display: flex;
+      width: 75%;
+      margin: auto;
+
+      a {
+        padding: 30px;
+        margin: 15px;
+      }
+    }
   }
 }

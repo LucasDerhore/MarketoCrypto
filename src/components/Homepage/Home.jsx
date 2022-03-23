@@ -1,7 +1,8 @@
 import React from "react";
 import millify from "millify";
-import { Typography, Row, Col, Statistic, Card } from "antd";
+import { Typography, Row, Card, Avatar, Col } from "antd";
 import { Link } from "react-router-dom";
+import image_2 from "../../images/crypto.jpg";
 import { useGetCryptosQuery } from "../../services/cryptoApi";
 import News from "../News/News";
 import Cryptocurrencies from "../Cryptocurrencies/Cryptocurrencies";
@@ -12,7 +13,6 @@ const { Title } = Typography;
 
 const Home = () => {
   const { data, isFetching } = useGetCryptosQuery(10);
-  const globalStats = data?.data?.stats;
 
   //const { data, isFetching } =  useGetCryptoNewsQuery(3);
 
@@ -20,60 +20,48 @@ const Home = () => {
 
   return (
     <>
-      <div className="global-stats-crypto">
-        <Title level={2} className="heading">
-          Global Crypto Stats
-        </Title>
-        <Row>
-          <Col span={12}>
-            <Statistic
-              title="Total Cryptocurrencies"
-              value={globalStats.total}
-            />
-          </Col>
-          <Col span={12}>
-            <Statistic
-              title="Total Exchanges"
-              value={globalStats.totalExchanges}
-            />
-          </Col>
-          <Col span={12}>
-            <Statistic
-              title="Total Market Cap"
-              value={globalStats.totalMarketCap}
-            />
-          </Col>
-          <Col span={12}>
-            <Statistic
-              title="Total 24h Volume"
-              value={globalStats.total24hVolume}
-            />
-          </Col>
-          <Col span={12}>
-            <Statistic title="Total Markets" value={globalStats.totalMarkets} />
-          </Col>
-        </Row>
-      </div>
+      <div className="home-main">
+        {/* <Row gutter={[32, 32]} className="home-main-heading">
+          <Card className="what-and-why-crypto">
+            <Title level={2} className="title-heading">
+              What's Cryptocurrency ?{" "}
+            </Title>
+            <p>
+              A virtual means of payment that is used primarily on the Internet,
+              relying on cryptography to secure transactions and the creation of
+              units, and escaping all control by regulators and central banks.
+              (Also known as cryptocurrency.) (There are hundreds of
+              cryptocurrencies in the world, including bitcoin. Because they are
+              not legal tender, experts prefer to call them cryptoassets).
+            </p>
+            <p>
+              Why <em>cryptocurrency</em>? It's a rapidly growing market. It's a
+              very large territory that the world is slowly discovering.
+            </p>
+          </Card>
+        </Row> */}
 
-      <div className="home-cryptos">
-        <Title level={2} className="heading">
-          Top 10 Best Cryptos moment
-        </Title>
-        <div>
-          <Cryptocurrencies simplified />
-        </div>
-        <Title level={3}>
-          <Link to="/cryptocurrencies">Show more</Link>
-        </Title>
-        <div className="home-heading-container">
-          <Title level={2} className="home-title">
-            Latest Crypto News
+        <div className="home-cryptos">
+          <Title level={2} className="home-title-crypto">
+            Top 10 Cryptocurrencies
+          </Title>
+          <Title level={3} className="show-more">
+            <Link to="/cryptocurrencies">Show More</Link>
           </Title>
         </div>
-        <News simplified />
-        <Title level={3}>
-          <Link to="/news">Show more</Link>
-        </Title>
+        <Cryptocurrencies simplified />
+
+        <div className="home-news">
+          <Title level={2} className="home-title-news">
+            Latest Crypto News Published
+          </Title>
+          <Title level={3} className="show-more">
+            <Link to="/news">Show more</Link>
+          </Title>
+        </div>
+        <Card className="card-news">
+          <News simplified />
+        </Card>
       </div>
     </>
   );

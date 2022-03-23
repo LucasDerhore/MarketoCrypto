@@ -1,41 +1,84 @@
 @import "~antd/dist/antd.css";
-
-.search-crypto {
-  width: 250px;
-  margin: 20px auto 30px auto;
-}
-
-.ant-table-thead > tr > th {
-  position: relative;
-  color: rgba(0, 0, 0, 0.85);
-  font-weight: 500;
-  text-align: left;
-  background: #1890ff;
-}
-.ant-table-pagination > * {
-  flex: none;
-  margin-right: 10px;
-}
-
-.top-volume {
-  width: 50%;
+.cryptos-page {
+  .global-stats-crypto {
+    text-align: center;
+    width: 100%;
+    .heading {
+      font-size: 50px;
+      color: #a83730;
+    }
+    .statistic-crypto {
+      display: flex;
+      justify-content: space-around;
+      margin: 50px 0 50px 0;
+      .stats-title {
+        font-size: 30px;
+      }
+      .stats-global {
+        font-size: 25px;
+      }
+    }
+  }
+  .paragraph-crypto {
+    text-align: center;
+    font-size: 25px;
+  }
+  .search-crypto {
+    margin: 20px auto 30px auto;
+    width: 300px;
+    .search-bar {
+      height: 50px;
+      border: solid 1px #a83730;
+    }
+  }
 }
 
 .cryptos-currency {
   display: flex;
+  font-size: 25px;
+  .ant-table-thead > tr > th {
+    position: relative;
+    color: rgba(0, 0, 0, 0.85);
+    font-weight: 500;
+    text-align: left;
+    background: #efefef;
+    color: #a83730;
+  }
+  .ant-table-cell {
+    font-size: 22px;
+  }
   .table-crypto {
     border-radius: 15px;
     width: 100%;
     margin: 50px;
     padding: auto;
-    box-shadow: 5px 2px 18px 5px rgba(0, 0, 0, 0.64);
-    -webkit-box-shadow: 5px 2px 18px 5px rgba(0, 0, 0, 0.64);
-    -moz-box-shadow: 5px 2px 18px 5px rgba(0, 0, 0, 0.64);
-    font-family: cursive;
-    background: #1890ff;
+    background: #efefef;
+
+    a:hover {
+      color: #a83730;
+    }
 
     .table-cryptoDetails {
       background-color: #efefef;
+      font-size: 25px;
+      img {
+        width: 50px;
+      }
+    }
+    .ant-table-pagination {
+      flex: none;
+      margin-right: 10px;
+      color: #a83730;
+      .ant-pagination-item-active {
+        border-color: #a83730;
+        a {
+          color: #a83730;
+        }
+      }
+      .anticon svg {
+        display: inline-block;
+        color: #a83730;
+      }
     }
   }
 }
