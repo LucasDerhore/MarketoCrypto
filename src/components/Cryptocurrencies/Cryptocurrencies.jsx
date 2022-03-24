@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react";
 import "chartjs-adapter-date-fns";
 import millify from "millify";
-import { Input, Table, Col, Row, Statistic, Typography } from "antd";
+import { Input, Table, Avatar, Typography } from "antd";
 import { Link } from "react-router-dom";
 import "../Cryptocurrencies/Cryptocurrencies.scss";
 
 import { useGetCryptosQuery } from "../../services/cryptoApi";
+import { colors } from "@material-ui/core";
 
 const { Title } = Typography;
 
@@ -94,38 +95,6 @@ const Cryptocurrencies = ({ simplified }) => {
                 </p>
               </div>
             </div>
-            {/* <Row>
-              <Col span={12}>
-                <Statistic
-                  title="Total Cryptocurrencies"
-                  value={millify(globalStats.total)}
-                />
-              </Col>
-              <Col span={12}>
-                <Statistic
-                  title="Total Exchanges"
-                  value={millify(globalStats.totalExchanges)}
-                />
-              </Col>
-              <Col span={12}>
-                <Statistic
-                  title="Total Market Cap"
-                  value={millify(globalStats.totalMarketCap)}
-                />
-              </Col>
-              <Col span={12}>
-                <Statistic
-                  title="Total 24h Volume"
-                  value={millify(globalStats.total24hVolume)}
-                />
-              </Col>
-              <Col span={12}>
-                <Statistic
-                  title="Total Markets"
-                  value={millify(globalStats.totalMarkets)}
-                />
-              </Col>
-            </Row> */}
           </div>
           <div className="paragraph-crypto">
             <em>
@@ -141,6 +110,7 @@ const Cryptocurrencies = ({ simplified }) => {
           </div>
           <div className="search-crypto">
             <Input
+              class="no-outline"
               className="search-bar"
               placeholder="Search Cryptocurrency"
               onChange={(e) => setSearchTerm(e.target.value)}

@@ -1,34 +1,43 @@
-@import "~antd/dist/antd.css";
 .cryptos-page {
   .global-stats-crypto {
     text-align: center;
     width: 100%;
+
     .heading {
       font-size: 50px;
       color: #a83730;
     }
+
     .statistic-crypto {
       display: flex;
       justify-content: space-around;
       margin: 50px 0 50px 0;
-      .stats-title {
-        font-size: 30px;
-      }
-      .stats-global {
+
+      p {
         font-size: 25px;
       }
     }
   }
+
   .paragraph-crypto {
     text-align: center;
     font-size: 25px;
   }
+
   .search-crypto {
-    margin: 20px auto 30px auto;
-    width: 300px;
-    .search-bar {
-      height: 50px;
-      border: solid 1px #a83730;
+    text-align: center;
+    input {
+      margin: 20px auto 30px auto;
+      width: 300px;
+      height: 45px;
+      border-radius: 15px;
+    }
+
+    input:hover {
+      border-color: #a83730 !important;
+    }
+    input:focus {
+      outline: none !important;
     }
   }
 }
@@ -36,6 +45,7 @@
 .cryptos-currency {
   display: flex;
   font-size: 25px;
+
   .ant-table-thead > tr > th {
     position: relative;
     color: rgba(0, 0, 0, 0.85);
@@ -44,9 +54,11 @@
     background: #efefef;
     color: #a83730;
   }
+
   .ant-table-cell {
     font-size: 22px;
   }
+
   .table-crypto {
     border-radius: 15px;
     width: 100%;
@@ -61,16 +73,20 @@
     .table-cryptoDetails {
       background-color: #efefef;
       font-size: 25px;
+
       img {
         width: 50px;
       }
     }
+
     .ant-table-pagination {
       flex: none;
       margin-right: 10px;
       color: #a83730;
+
       .ant-pagination-item-active {
         border-color: #a83730;
+
         a {
           color: #a83730;
         }
