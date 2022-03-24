@@ -1,9 +1,9 @@
 .loading-news {
   text-align: center !important;
-  font-size: 50px;
+  font-size: 30px;
   .loading-img {
-    width: 115px;
-    height: 115px;
+    width: 75px;
+    height: 75px;
   }
 }
 
@@ -14,12 +14,12 @@
     color: #a83730 !important;
   }
 
-  .ant-select:not(.ant-select-disabled):hover .ant-select-selector {
-    border-color: #a83730 !important ;
-  }
-
   .select-news {
     width: 200px;
+    .ant-select-selector {
+      border-radius: 15px !important;
+      border-color: #a83730 !important ;
+    }
   }
 }
 .news-card {

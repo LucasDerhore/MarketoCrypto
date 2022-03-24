@@ -30,7 +30,6 @@ const News = ({ simplified }) => {
         </h1>
       </div>
     );
-  console.log(cryptoNews);
   return (
     <Row gutter={[24, 24]}>
       {!simplified && (

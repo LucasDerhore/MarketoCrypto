@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Typography, Card } from "antd";
+import { Card } from "antd";
 import "./CardDetail.scss";
 
 function CardDetail(props) {

@@ -1,20 +1,27 @@
 import React from "react";
-import { Typography, Card } from "antd";
+import { Typography, Card, Avatar } from "antd";
 import { Link } from "react-router-dom";
-import { useGetCryptosQuery } from "../../services/cryptoApi";
 import News from "../News/News";
 import Cryptocurrencies from "../Cryptocurrencies/Cryptocurrencies";
 
+import image from "../../images/cryptocurrency.png";
 import "../Homepage/Home.scss";
+
+import { useGetCryptosQuery } from "../../services/cryptoApi";
 
 const { Title } = Typography;
 
 const Home = () => {
   const { data, isFetching } = useGetCryptosQuery(10);
 
-  //const { data, isFetching } =  useGetCryptoNewsQuery(3);
-
-  if (isFetching) return "Loading";
+  if (isFetching)
+    return (
+      <div className="loading-news">
+        <h1>
+          Loading... <Avatar className="loading-img" src={image} size="large" />
+        </h1>
+      </div>
+    );
 
   return (
     <>

@@ -3,6 +3,8 @@ import "chartjs-adapter-date-fns";
 import millify from "millify";
 import { Input, Table, Avatar, Typography } from "antd";
 import { Link } from "react-router-dom";
+
+import image from "../../images/cryptocurrency.png";
 import "../Cryptocurrencies/Cryptocurrencies.scss";
 
 import { useGetCryptosQuery } from "../../services/cryptoApi";
@@ -56,7 +58,14 @@ const Cryptocurrencies = ({ simplified }) => {
     setCryptos(filteredData);
   }, [cryptosList, searchTerm]);
 
-  if (isFetching) return "Loading..";
+  if (isFetching)
+    return (
+      <div className="loading-crypto">
+        <h1>
+          Loading... <Avatar className="loading-img" src={image} size="large" />
+        </h1>
+      </div>
+    );
   return (
     <>
       {!simplified && (

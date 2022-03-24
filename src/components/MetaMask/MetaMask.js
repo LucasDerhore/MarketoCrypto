@@ -1,11 +1,11 @@
 import React, { useState } from "react";
+import { Button, Typography, Avatar, Col } from "antd";
 
 import image_1 from "../../images/metamask.svg";
 import image_2 from "../../images/binance.svg";
 import image_3 from "../../images/opensea.svg";
 
 import "../MetaMask/MetaMask.scss";
-import { Card, Button, Typography, Avatar, Col, Row } from "antd";
 
 const { Title } = Typography;
 
@@ -19,7 +19,6 @@ function MetaMask() {
       ethereum.on("accountsChanged", function (accounts) {
         setAddr(accounts[0]);
       });
-      console.log("MetaMask is installed!");
     }
   };
 
@@ -32,7 +31,7 @@ function MetaMask() {
         <div className="metamask-card">
           <div className="metamask-text">
             <a href="https://metamask.io/" target="_blank" rel="noreferrer">
-              <Avatar src={image_1} size="large" />
+              <Avatar className="avatar-metamask" src={image_1} size="large" />
             </a>
             <p>
               MetaMask allows users to store and manage account keys, broadcast
@@ -45,11 +44,20 @@ function MetaMask() {
             <Button onClick={() => signMetamask()}>Connect Metamask</Button>
 
             <div className="metamask-account">
-              {ethereum && <p>Your Ethereum adress: {addr}</p>}
+              {ethereum && (
+                <p>
+                  Your Ethereum address: <h4>{addr}</h4>
+                </p>
+              )}
               {!ethereum && <h3>Please active your extension MetaMask.</h3>}
             </div>
 
-            {ethereum && <h3>diconnect with extension MetaMask.</h3>}
+            {ethereum && (
+              <h3>
+                Disconnect your address with metamask and leave the site to
+                disconnect the metamask extension.
+              </h3>
+            )}
           </div>
         </div>
       </Col>
@@ -69,7 +77,7 @@ function MetaMask() {
                 target="_blank"
                 rel="noreferrer"
               >
-                <Avatar src={image_2} size="large" />
+                <Avatar className="avatar-binance" src={image_2} size="large" />
               </a>
               <p>
                 Binance is an online exchange where users can trade
@@ -88,7 +96,7 @@ function MetaMask() {
                 What is OpenSea used for?
               </Title>
               <a href="https://opensea.io/" target="_blank" rel="noreferrer">
-                <Avatar src={image_3} size="large" />
+                <Avatar className="avatar-opensea" src={image_3} size="large" />
               </a>
               <p>
                 Quick Take: OpenSea is the leading marketplace for non-fungible

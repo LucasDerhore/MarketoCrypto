@@ -1,18 +1,13 @@
-import React, { useState } from "react";
-import { Typography, Row, Col, Statistic, Card } from "antd";
-import { Link } from "react-router-dom";
-import axios from "axios";
+import React from "react";
+import { Typography, Row, Col } from "antd";
 import "./NFT.scss";
 import "../News/News.scss";
 
-import { useGetNftQuery } from "../../services/cryptoNft";
 import CardDetail from "../CardDetail/CardDetail";
-import eachMonthOfInterval from "date-fns/eachMonthOfInterval/index";
 
 const { Title } = Typography;
 
-const Nft = ({ simplified }) => {
-  // const { data: nftsList, isFetching } = useGetNftQuery({});
+const Nft = () => {
   let i = 0;
   const nftsList = [
     {
@@ -89,8 +84,6 @@ const Nft = ({ simplified }) => {
     },
   ];
 
-  //if (isFetching) return "Loading...";
-  // Bizarre, j'peux test ?
   return (
     <>
       <div className="main-container">
@@ -120,12 +113,6 @@ const Nft = ({ simplified }) => {
               to create a digital ownership certificate for a unique physical
               asset, though this is currently not common.
             </Col>
-            {/* <Col className="col-text-heading">
-              NFTs became a popular investment in 2021, even though they’ve been
-              around since 2014. As cryptocurrency investing exploded, so did
-              the idea of taking certain digital assets and selling them to
-              investors to buy online.
-            </Col> */}
           </Col>
           <Title level={2} className="max-heading-nft">
             Top 12 NFTs collections
