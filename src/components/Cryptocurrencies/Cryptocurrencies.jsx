@@ -1,17 +1,22 @@
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+
 import millify from "millify";
-import { Input, Table } from "antd";
+import { Input, Table, Avatar, Typography, Col } from "antd";
 import { Link } from "react-router-dom";
+
+import image from "../../images/cryptocurrency.png";
 import "../Cryptocurrencies/Cryptocurrencies.scss";
 
 import { useGetCryptosQuery } from "../../services/cryptoApi";
 
-const Cryptocurrencies = (simplified) => {
+const { Title, Text } = Typography;
+
+const Cryptocurrencies = ({ simplified }) => {
   const count = simplified ? 10 : 100;
-  const { data: cryptosList, isFetching } = useGetCryptosQuery(count);
+  const { data: cryptosList, data, isFetching } = useGetCryptosQuery(count);
   const [cryptos, setCryptos] = useState(cryptosList?.data?.coins);
   const [searchTerm, setSearchTerm] = useState("");
+  const globalStats = data?.data?.stats;
 
   const columns = [
     { title: "Rank", dataIndex: "rank", key: "rank" },
@@ -52,15 +57,77 @@ const Cryptocurrencies = (simplified) => {
     setCryptos(filteredData);
   }, [cryptosList, searchTerm]);
 
-  if (isFetching) return "Loading..";
+  if (isFetching)
+    return (
+      <div className="loading-crypto">
+        <h1>
+          Loading... <Avatar className="loading-img" src={image} size="large" />
+        </h1>
+      </div>
+    );
   return (
     <>
-      <div className="search-crypto">
-        <Input
-          placeholder="search Cryptocurrency"
-          onChange={(e) => setSearchTerm(e.target.value)}
-        />
-      </div>
+      {!simplified && (
+        <div className="cryptos-page">
+          <div className="global-stats-crypto">
+            <Title level={1} className="heading">
+              Global Crypto Stats
+            </Title>
+            <div className="col-container">
+              <Col className="statistic-crypto">
+                <Col className="global-total">
+                  <Text className="stats-title">Total Cryptocurrencies</Text>
+                  <Text className="stats-global">
+                    {millify(globalStats.total)}{" "}
+                  </Text>
+                </Col>
+                <Col className="global-exchanges">
+                  <Text className="stats-title">Total Exchanges</Text>
+                  <Text className="stats-global">
+                    {millify(globalStats.totalExchanges)}
+                  </Text>
+                </Col>
+                <Col className="global-marketcap">
+                  <Text className="stats-title">Total Market Cap</Text>
+                  <Text className="stats-global">
+                    {millify(globalStats.totalMarketCap)}
+                  </Text>
+                </Col>
+                <Col className="global-24hvolume">
+                  <Text className="stats-title">Total 24h Volume</Text>
+                  <Text className="stats-global">
+                    {millify(globalStats.total24hVolume)}
+                  </Text>
+                </Col>
+                <Col className="global-markets">
+                  <Text className="stats-title">Total Markets</Text>
+                  <Text className="stats-global">
+                    {millify(globalStats.totalMarkets)}
+                  </Text>
+                </Col>
+              </Col>
+            </div>
+          </div>
+          <div className="paragraph-crypto">
+            <p>
+              All, the cryptos other than Bitcoin, are called
+              <strong> altcoin.</strong>
+            </p>
+            <p>
+              Here, 100 crypto-currencies are listed in order from most to least
+              traded.
+            </p>
+          </div>
+          <div className="search-crypto">
+            <Input
+              className="search-bar"
+              placeholder="Search Cryptocurrency"
+              onChange={(e) => setSearchTerm(e.target.value)}
+            />
+          </div>
+        </div>
+      )}
+
       <div className="cryptos-currency">
         <Table
           className="table-crypto"

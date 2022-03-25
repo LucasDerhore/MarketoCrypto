@@ -1,43 +1,39 @@
 import React from "react";
 import image from "../../images/cryptocurrency.png";
+import image_1 from "../../images/metamask.svg";
 import "../Navbar/Navbar.scss";
-import { Menu, Typography, Avatar } from "antd";
+import { Avatar, Typography } from "antd";
 import { Link } from "react-router-dom";
 
-import {
-  HomeOutlined,
-  MoneyCollectOutlined,
-  BulbOutlined,
-  FundOutlined,
-} from "@ant-design/icons";
+const { Title } = Typography;
 
 const Navbar = () => {
   return (
-    <div className="nav-container">
-      <div className="logo-container">
-        <Avatar src={image} size="large" />
-        <Typography.Title level={3} className="logo">
-          <Link to="/">Marketo Crypto</Link>
-        </Typography.Title>
+    <header>
+      <nav>
+        <label for="toggle">
+          <Title lvl={3} className="nav-title">
+            <Avatar src={image} size="large" className="nav-logo" />
+            Marketo Crypto
+          </Title>
+          ☰
+        </label>
+        <input type="checkbox" id="toggle"></input>
         <div className="nav-link">
-          <Link to="/" style={{ marginRight: "200px", fontSize: "20px" }}>
-            Home
-          </Link>
-          <Link
-            to="/Cryptocurrencies"
-            style={{ marginRight: "200px", fontSize: "20px" }}
-          >
-            Cryptos
-          </Link>
-          <Link to="/News" style={{ marginRight: "200px", fontSize: "20px" }}>
-            News
-          </Link>
-          <Link to="/NFT" style={{ marginRight: "200px", fontSize: "20px" }}>
-            NFT
+          <Avatar src={image} size="large" className="nav-logo" />
+          <Title lvl={3} className="nav-title">
+            Marketo Crypto
+          </Title>
+          <Link to="/">Home</Link>
+          <Link to="/Cryptocurrencies">Cryptos</Link>
+          <Link to="/News">News</Link>
+          <Link to="/NFT">NFT</Link>
+          <Link to="/Metamask">
+            <Avatar src={image_1} size="large" />
           </Link>
         </div>
-      </div>
-    </div>
+      </nav>
+    </header>
   );
 };
 

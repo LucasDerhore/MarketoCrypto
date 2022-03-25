@@ -1,9 +1,24 @@
 .main-container {
   .title-container {
     width: 100%;
-
     margin-top: 25px;
+
+    .min-heading-nft {
+      text-align: left !important;
+      margin-left: 100px;
+      margin-bottom: 50px;
+      color: #a83730;
+    }
+
+    .max-heading-nft {
+      text-align: left !important;
+      margin-left: 100px;
+      margin-bottom: 50px;
+      margin-top: 50px;
+      color: #a83730;
+    }
   }
+
   .title-container > p {
     margin-left: 30px;
     margin-right: 30px;
@@ -18,14 +33,13 @@
   }
 
   .nft-card-container {
-    min-height: 65vh !important;
-    margin-left: 100px !important;
+    justify-content: center;
+    margin-bottom: 30px;
   }
 
   .col-text {
     display: flex;
-    justify-content: space-between;
-    gap: 100px;
+    margin-left: 1rem;
 
     .col-text-heading {
       font-size: 18px;

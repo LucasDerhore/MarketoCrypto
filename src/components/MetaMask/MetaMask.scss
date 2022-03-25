@@ -1,0 +1,122 @@
+.metamask-container {
+  width: 100%;
+  text-align: center !important;
+
+  h1 {
+    color: #a83730;
+    text-align: center;
+    font-size: 30px;
+  }
+
+  h2 {
+    font-size: 25px;
+    opacity: 0.9;
+    margin-left: 80px;
+    color: #a83730;
+  }
+
+  p {
+    font-size: 18px;
+    padding-top: 15px !important;
+  }
+
+  .metamask-title {
+    margin-top: 50px;
+  }
+
+  .avatar-metamask {
+    width: 60px;
+    height: 60px;
+  }
+
+  .avatar-binance {
+    width: 70px;
+    height: 70px;
+  }
+
+  .avatar-opensea {
+    width: 60px;
+    height: 60px;
+  }
+
+  .metamask-card {
+    width: 50%;
+    margin: auto !important;
+    text-align: center !important;
+
+    .metamask-text {
+      width: 95%;
+      padding-top: 5px;
+      margin: auto;
+    }
+
+    .metamask-account {
+      h4 {
+        font-size: 25px;
+        color: #a83730;
+      }
+    }
+
+    button {
+      margin-top: 20px;
+      font-size: 15px;
+      border-color: #a83730 !important ;
+      border-radius: 15px !important;
+
+      span:hover {
+        color: #a83730 !important ;
+      }
+    }
+
+    h2 {
+      padding-right: 100px;
+    }
+
+    h3 {
+      color: grey;
+    }
+  }
+
+  .platform-title {
+    margin-top: 70px !important;
+  }
+
+  .platform-container {
+    display: flex;
+    align-items: center !important;
+    margin-top: 50px !important;
+
+    .platform-col {
+      display: flex;
+      width: 100%;
+
+      h2 {
+        margin: auto !important;
+        width: 80%;
+      }
+
+      .binance-card {
+        width: 80%;
+        margin: auto !important;
+
+        .avatar-binance {
+          width: 65px;
+          height: 65px;
+          margin-top: 15px;
+        }
+      }
+
+      .opensea-card {
+        width: 100%;
+        margin: auto !important;
+        padding-right: 20px !important;
+
+        .avatar-opensea {
+          width: 65px;
+          height: 65px;
+          margin-top: 15px;
+        }
+      }
+    }
+  }
+}

@@ -1,8 +1,56 @@
-.home-cryptos {
-  h2.ant-typography {
-    text-align: center !important;
+.loading-news {
+  text-align: center !important;
+  font-size: 30px;
+  .loading-img {
+    width: 75px;
+    height: 75px;
   }
-  h3.ant-typography {
-    text-align: center !important;
+}
+
+.home-main {
+  width: 95vw;
+  align-items: center;
+
+  .show-more {
+    text-align: right;
+    a {
+      color: #da9e37;
+    }
+
+    a:hover {
+      color: #a83730 !important;
+    }
+  }
+
+  .home-cryptos {
+    text-align: center;
+    .home-title-crypto {
+      margin-top: 30px;
+      font-size: 45px;
+      color: #a83730;
+    }
+    .ant-table-pagination > * {
+      flex: none;
+      width: 25px;
+    }
+
+    a:hover {
+      color: #a83730 !important;
+    }
+  }
+
+  .home-news {
+    margin: 25px;
+
+    .home-title-news {
+      letter-spacing: 2px;
+      font-size: 45px;
+      color: #a83730;
+      text-align: center;
+    }
+
+    .card-news {
+      border: none;
+    }
   }
 }

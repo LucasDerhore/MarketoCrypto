@@ -1,5 +1,5 @@
 import React from "react";
-import { Routes, Route, Link } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import {
   Cryptocurrencies,
   CryptoDetails,
@@ -9,7 +9,10 @@ import {
   LineChart,
   Navbar,
   Footer,
+  MetaMask,
 } from "./components";
+
+import "./App.scss";
 
 const App = () => {
   console.log(process.env.REACT_APP_TOKENCOINRANKING);
@@ -17,30 +20,33 @@ const App = () => {
   console.log(process.env.REACT_APP_TOKENNFT);
 
   return (
-    <div className="app">
-      <div className="navbar">
+    <>
+      <header>
         <Navbar />
-      </div>
-      <div className="main">
-        <div className="routes">
-          <Routes>
-            <Route exact path="/" element={<Home />} />
-            <Route
-              exact
-              path="/cryptocurrencies"
-              element={<Cryptocurrencies />}
-            />
-            <Route exact path="/crypto/:coinId" element={<CryptoDetails />} />
-            <Route exact path="/news" element={<News />} />
-            <Route exact path="/nft" element={<Nft />} />
-            <Route exact path="/linechart" element={<LineChart />} />
-          </Routes>
+      </header>
+      <div className="app">
+        <body>
+          <div className="routes">
+            <Routes>
+              <Route exact path="/" element={<Home />} />
+              <Route
+                exact
+                path="/cryptocurrencies"
+                element={<Cryptocurrencies />}
+              />
+              <Route exact path="/crypto/:coinId" element={<CryptoDetails />} />
+              <Route exact path="/news" element={<News />} />
+              <Route exact path="/nft" element={<Nft />} />
+              <Route exact path="/linechart" element={<LineChart />} />
+              <Route exact path="/metamask" element={<MetaMask />} />
+            </Routes>
+          </div>
+        </body>
+        <div className="footer">
+          <Footer />
         </div>
       </div>
-      <div className="footer">
-        <Footer />
-      </div>
-    </div>
+    </>
   );
 };
 

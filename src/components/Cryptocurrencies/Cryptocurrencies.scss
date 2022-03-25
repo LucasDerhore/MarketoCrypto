@@ -1,28 +1,142 @@
-@import "~antd/dist/antd.css";
-
-.search-crypto {
-  width: 250px;
-  margin: 20px auto 30px auto;
+.loading-crypto {
+  text-align: center !important;
+  font-size: 30px;
+  .loading-img {
+    width: 75px;
+    height: 75px;
+  }
 }
 
-.ant-table-thead > tr > th {
-  position: relative;
-  color: rgba(0, 0, 0, 0.85);
-  font-weight: 500;
-  text-align: left;
-  background: #82ccdd;
+.cryptos-page {
+  .global-stats-crypto {
+    text-align: center !important;
+
+    .heading {
+      font-size: 50px;
+      color: #a83730;
+    }
+
+    .col-container {
+      display: flex;
+      justify-content: center;
+      .statistic-crypto {
+        .global-total {
+          margin: auto;
+          display: grid;
+        }
+
+        .global-exchanges {
+          margin: auto !important;
+          display: grid;
+        }
+
+        .global-marketcap {
+          width: 80%;
+          margin: auto !important;
+          display: grid;
+        }
+
+        .global-24hvolume {
+          width: 80%;
+          margin: auto !important;
+          display: grid;
+        }
+
+        .global-markets {
+          width: 80%;
+          margin: auto !important;
+          display: grid;
+        }
+
+        .stats-title {
+          font-size: 25px;
+          color: #a83730;
+        }
+        .stats-global {
+          font-size: 25px;
+        }
+      }
+    }
+  }
+
+  .paragraph-crypto {
+    text-align: center;
+    font-size: 22px;
+    margin-top: 20px;
+    p {
+      font-style: italic;
+    }
+  }
+
+  .search-crypto {
+    text-align: center;
+    input {
+      margin-top: 20px;
+      width: 300px;
+      border-radius: 15px;
+    }
+
+    input:hover {
+      border-color: #a83730 !important;
+    }
+    input:focus {
+      outline: none !important;
+    }
+  }
 }
+
 .cryptos-currency {
+  display: flex;
+  font-size: 25px;
+  margin-left: 90px;
+
+  .ant-table-thead > tr > th {
+    background: #efefef;
+    color: #a83730;
+  }
+
+  .ant-table-cell {
+    font-size: 22px;
+  }
+
   .table-crypto {
-    border-radius: 15px;
-    width: 75%;
-    margin: auto;
-    padding: auto;
-    box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.73);
-    -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.73);
-    -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.73);
+    width: 100%;
+    margin: 50px;
+    background: #efefef;
+
+    a {
+      color: #da9e37;
+    }
+
+    a:hover {
+      color: #a83730;
+    }
+
     .table-cryptoDetails {
       background-color: #efefef;
+      font-size: 25px;
+
+      img {
+        width: 50px;
+      }
+    }
+
+    .ant-table-pagination {
+      flex: none;
+      margin-right: 10px;
+      color: #a83730;
+
+      .ant-pagination-item-active {
+        border-color: #a83730;
+
+        a {
+          color: #a83730;
+        }
+      }
+      .anticon svg {
+        display: inline-block;
+        color: #a83730;
+      }
     }
   }
 }

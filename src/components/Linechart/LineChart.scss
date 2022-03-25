@@ -1,9 +1,36 @@
 .chart-header {
-  display: flex;
-  justify-content: space-between;
-  gap: 50px;
-  color: #0071bd;
+  display: block;
+  gap: 20px;
+  margin-top: 50px;
 }
 .chart-title {
   color: #000000 !important;
+}
+
+.select-timeperiod {
+  width: 120px !important;
+  margin-top: 20px !important;
+}
+
+@media screen and (max-width: 1000px) {
+  .stats-container {
+    flex-direction: column;
+  }
+  .coin-desc-link {
+    flex-direction: column;
+  }
+  .stats-container h2 {
+    margin-top: 0px;
+  }
+}
+canvas {
+  width: 1400px !important;
+  height: 700px !important;
+  margin-top: 70px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.ant-col {
+  text-align: center;
 }
