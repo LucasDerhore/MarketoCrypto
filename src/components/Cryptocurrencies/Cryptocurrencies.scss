@@ -25,6 +25,10 @@
       p {
         font-size: 25px;
       }
+
+      .stats-title {
+        font-weight: 500;
+      }
     }
   }
 
@@ -36,9 +40,8 @@
   .search-crypto {
     text-align: center;
     input {
-      margin: 20px auto 30px auto;
+      margin-top: 20px;
       width: 300px;
-      height: 45px;
       border-radius: 15px;
     }
 
@@ -54,12 +57,9 @@
 .cryptos-currency {
   display: flex;
   font-size: 25px;
+  margin-left: 90px;
 
   .ant-table-thead > tr > th {
-    position: relative;
-    color: rgba(0, 0, 0, 0.85);
-    font-weight: 500;
-    text-align: left;
     background: #efefef;
     color: #a83730;
   }
@@ -69,11 +69,13 @@
   }
 
   .table-crypto {
-    border-radius: 15px;
     width: 100%;
     margin: 50px;
-    padding: auto;
     background: #efefef;
+
+    a {
+      color: #da9e37;
+    }
 
     a:hover {
       color: #a83730;
