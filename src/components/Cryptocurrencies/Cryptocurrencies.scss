@@ -9,7 +9,7 @@
 
 .cryptos-page {
   .global-stats-crypto {
-    text-align: center;
+    text-align: center !important;
 
     .heading {
       font-size: 50px;
@@ -17,42 +17,42 @@
     }
 
     .col-container {
-      display: flex !important;
-      text-align: center !important;
+      display: flex;
+      justify-content: center;
       .statistic-crypto {
-        display: flex;
-
         .global-total {
-          width: 80%;
-          margin: auto !important;
+          margin: auto;
+          display: grid;
         }
 
         .global-exchanges {
-          width: 80%;
           margin: auto !important;
+          display: grid;
         }
 
         .global-marketcap {
           width: 80%;
           margin: auto !important;
+          display: grid;
         }
 
         .global-24hvolume {
           width: 80%;
           margin: auto !important;
+          display: grid;
         }
 
         .global-markets {
           width: 80%;
           margin: auto !important;
+          display: grid;
         }
 
         .stats-title {
           font-size: 25px;
           color: #a83730;
         }
-
-        p {
+        .stats-global {
           font-size: 25px;
         }
       }
@@ -61,7 +61,11 @@
 
   .paragraph-crypto {
     text-align: center;
-    font-size: 25px;
+    font-size: 22px;
+    margin-top: 20px;
+    p {
+      font-style: italic;
+    }
   }
 
   .search-crypto {

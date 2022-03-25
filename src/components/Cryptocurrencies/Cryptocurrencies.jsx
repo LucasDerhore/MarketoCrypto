@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "chartjs-adapter-date-fns";
+
 import millify from "millify";
 import { Input, Table, Avatar, Typography, Col } from "antd";
 import { Link } from "react-router-dom";
@@ -8,9 +8,8 @@ import image from "../../images/cryptocurrency.png";
 import "../Cryptocurrencies/Cryptocurrencies.scss";
 
 import { useGetCryptosQuery } from "../../services/cryptoApi";
-import { colors } from "@material-ui/core";
 
-const { Title } = Typography;
+const { Title, Text } = Typography;
 
 const Cryptocurrencies = ({ simplified }) => {
   const count = simplified ? 10 : 100;
@@ -75,53 +74,52 @@ const Cryptocurrencies = ({ simplified }) => {
               Global Crypto Stats
             </Title>
             <div className="col-container">
-            <Col className="statistic-crypto" xs={24} sm={12} lg={8}>
-              <Col className="global-total">
-                <p className="stats-title">Total Cryptocurrencies</p>
-                <p className="stats-global">{millify(globalStats.total)} </p>
+              <Col className="statistic-crypto">
+                <Col className="global-total">
+                  <Text className="stats-title">Total Cryptocurrencies</Text>
+                  <Text className="stats-global">
+                    {millify(globalStats.total)}{" "}
+                  </Text>
+                </Col>
+                <Col className="global-exchanges">
+                  <Text className="stats-title">Total Exchanges</Text>
+                  <Text className="stats-global">
+                    {millify(globalStats.totalExchanges)}
+                  </Text>
+                </Col>
+                <Col className="global-marketcap">
+                  <Text className="stats-title">Total Market Cap</Text>
+                  <Text className="stats-global">
+                    {millify(globalStats.totalMarketCap)}
+                  </Text>
+                </Col>
+                <Col className="global-24hvolume">
+                  <Text className="stats-title">Total 24h Volume</Text>
+                  <Text className="stats-global">
+                    {millify(globalStats.total24hVolume)}
+                  </Text>
+                </Col>
+                <Col className="global-markets">
+                  <Text className="stats-title">Total Markets</Text>
+                  <Text className="stats-global">
+                    {millify(globalStats.totalMarkets)}
+                  </Text>
+                </Col>
               </Col>
-              <Col className="global-exchanges">
-                <p className="stats-title">Total Exchanges</p>
-                <p className="stats-global">
-                  {millify(globalStats.totalExchanges)}
-                </p>
-              </Col>
-              <Col className="global-marketcap">
-                <p className="stats-title">Total Market Cap</p>
-                <p className="stats-global">
-                  {millify(globalStats.totalMarketCap)}
-                </p>
-              </Col>
-              <Col className="global-24hvolume">
-                <p className="stats-title">Total 24h Volume</p>
-                <p className="stats-global">
-                  {millify(globalStats.total24hVolume)}
-                </p>
-              </Col>
-              <Col className="global-markets">
-                <p className="stats-title">Total Markets</p>
-                <p className="stats-global">
-                  {millify(globalStats.totalMarkets)}
-                </p>
-              </Col>
-            </Col>
             </div>
           </div>
           <div className="paragraph-crypto">
-            <em>
-              <p>
-                All, the cryptos other than Bitcoin, are called
-                <strong> altcoin.</strong>
-              </p>
-              <p>
-                Here, 100 crypto-currencies are listed in order from most to
-                least traded.
-              </p>
-            </em>
+            <p>
+              All, the cryptos other than Bitcoin, are called
+              <strong> altcoin.</strong>
+            </p>
+            <p>
+              Here, 100 crypto-currencies are listed in order from most to least
+              traded.
+            </p>
           </div>
           <div className="search-crypto">
             <Input
-              class="no-outline"
               className="search-bar"
               placeholder="Search Cryptocurrency"
               onChange={(e) => setSearchTerm(e.target.value)}

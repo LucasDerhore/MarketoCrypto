@@ -85,10 +85,10 @@
     display: flex;
     align-items: center !important;
     margin-top: 50px !important;
-    margin-bottom: 50px;
 
     .platform-col {
       display: flex;
+      width: 100%;
 
       h2 {
         margin: auto !important;
@@ -98,11 +98,24 @@
       .binance-card {
         width: 80%;
         margin: auto !important;
+
+        .avatar-binance {
+          width: 65px;
+          height: 65px;
+          margin-top: 15px;
+        }
       }
 
       .opensea-card {
-        width: 110%;
-        padding-right: 90px !important;
+        width: 100%;
+        margin: auto !important;
+        padding-right: 20px !important;
+
+        .avatar-opensea {
+          width: 65px;
+          height: 65px;
+          margin-top: 15px;
+        }
       }
     }
   }

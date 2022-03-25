@@ -93,16 +93,16 @@ function MetaMask() {
           <Col className="opensea-col">
             <div className="opensea-card">
               <Title level={2} className="platform-title">
-                What is OpenSea used for?
+                What is opensea used for?
               </Title>
               <a href="https://opensea.io/" target="_blank" rel="noreferrer">
                 <Avatar className="avatar-opensea" src={image_3} size="large" />
               </a>
               <p>
-                Quick Take: OpenSea is the leading marketplace for non-fungible
-                tokens. The platform lets users buy and sell NFTs on the
-                secondary marketplace and also create their own NFT collections
-                to sell on the primary marketplace
+                OpenSea is the leading marketplace for non-fungible tokens. The
+                platform lets users buy and sell NFTs on the secondary
+                marketplace and also create their own NFT collections to sell on
+                the primary marketplace.
               </p>
             </div>
           </Col>

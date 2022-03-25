@@ -18,7 +18,7 @@ function CardDetail(props) {
         <h2>{props.datas.collection_name}</h2>
       </a>
       <div className="card-image-body">
-        <h3>Floor : {props.datas.floor}</h3>
+        <h3>Floor : {props.datas.floor} ETH</h3>
         <p>Volume : {props.datas.volume}$</p>
       </div>
       <p className="style-p">CryptoMarketo</p>

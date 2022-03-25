@@ -14,7 +14,7 @@ export const cryptoNftApi = createApi({
   baseQuery: fetchBaseQuery({ baseUrl }),
   endpoints: (builder) => ({
     getNft: builder.query({
-      query: ({}) => createRequest("/collections/30d"),
+      query: () => createRequest(`/collections/30d`),
     }),
   }),
 });

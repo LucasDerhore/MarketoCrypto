@@ -1,88 +1,25 @@
-import React from "react";
-import { Typography, Row, Col } from "antd";
+import React, { useState } from "react";
+import { Typography, Row, Col, Avatar } from "antd";
 import "./NFT.scss";
 import "../News/News.scss";
-
+import image from "../../images/cryptocurrency.png";
 import CardDetail from "../CardDetail/CardDetail";
+import { useGetNftQuery } from "../../services/cryptoNft";
 
 const { Title } = Typography;
 
 const Nft = () => {
   let i = 0;
-  const nftsList = [
-    {
-      collection_name: "CryptoPunks",
-      collection_url: "google.com",
-      floor: 986,
-      volume: 948,
-    },
-    {
-      collection_name: "Bored Ape Yacht Club",
-      collection_url: "google.com",
-      floor: 986,
-      volume: 132456,
-    },
-    {
-      collection_name: "Bored Ape Kennel Club",
-      collection_url: "google.com",
-      floor: 986,
-      volume: 132456,
-    },
-    {
-      collection_name: "CrypToadz by GREMPLIN",
-      collection_url: "google.com",
-      floor: 986,
-      volume: 132456,
-    },
-    {
-      collection_name: "CLONE X - X TAKASHI MURAKAMI",
-      collection_url: "google.com",
-      floor: 986,
-      volume: 132456,
-    },
-    {
-      collection_name: "Doodles",
-      collection_url: "google.com",
-      floor: 986,
-      volume: 132456,
-    },
-    {
-      collection_name: "Meebits",
-      collection_url: "google.com",
-      floor: 986,
-      volume: 132456,
-    },
-    {
-      collection_name: "Azuki",
-      collection_url: "google.com",
-      floor: 986,
-      volume: 132456,
-    },
-    {
-      collection_name: "The Sandbox",
-      collection_url: "google.com",
-      floor: 986,
-      volume: 132456,
-    },
-    {
-      collection_name: "VeeFriends",
-      collection_url: "google.com",
-      floor: 986,
-      volume: 132456,
-    },
-    {
-      collection_name: "Emblem Vault [Ethereum]",
-      collection_url: "google.com",
-      floor: 986,
-      volume: 132456,
-    },
-    {
-      collection_name: "Cool Cats NFT",
-      collection_url: "google.com",
-      floor: 986,
-      volume: 132456,
-    },
-  ];
+  const { data: nftsList, isFetching } = useGetNftQuery();
+
+  if (isFetching)
+    return (
+      <div className="loading-news">
+        <h1>
+          Loading... <Avatar className="loading-img" src={image} size="large" />
+        </h1>
+      </div>
+    );
 
   return (
     <>
@@ -119,10 +56,11 @@ const Nft = () => {
           </Title>
         </div>
         <Row gutter={[16, 16]} className="nft-card-container">
-          {nftsList.map((e) => {
-            i++;
-            return <CardDetail datas={e} data-key={i} />;
-          })}
+          {!isFetching &&
+            nftsList.slice(0, 12).map((e) => {
+              i++;
+              return <CardDetail datas={e} data-key={i} />;
+            })}
         </Row>
       </div>
     </>
