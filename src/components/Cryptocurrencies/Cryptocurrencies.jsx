@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "chartjs-adapter-date-fns";
 import millify from "millify";
-import { Input, Table, Avatar, Typography } from "antd";
+import { Input, Table, Avatar, Typography, Col } from "antd";
 import { Link } from "react-router-dom";
 
 import image from "../../images/cryptocurrency.png";
@@ -74,35 +74,37 @@ const Cryptocurrencies = ({ simplified }) => {
             <Title level={1} className="heading">
               Global Crypto Stats
             </Title>
-            <div class="statistic-crypto">
-              <div className="global-total">
+            <div className="col-container">
+            <Col className="statistic-crypto" xs={24} sm={12} lg={8}>
+              <Col className="global-total">
                 <p className="stats-title">Total Cryptocurrencies</p>
                 <p className="stats-global">{millify(globalStats.total)} </p>
-              </div>
-              <div className="global-exchanges">
+              </Col>
+              <Col className="global-exchanges">
                 <p className="stats-title">Total Exchanges</p>
                 <p className="stats-global">
                   {millify(globalStats.totalExchanges)}
                 </p>
-              </div>
-              <div className="global-marketcap">
+              </Col>
+              <Col className="global-marketcap">
                 <p className="stats-title">Total Market Cap</p>
                 <p className="stats-global">
                   {millify(globalStats.totalMarketCap)}
                 </p>
-              </div>
-              <div className="global-24hvolume">
+              </Col>
+              <Col className="global-24hvolume">
                 <p className="stats-title">Total 24h Volume</p>
                 <p className="stats-global">
                   {millify(globalStats.total24hVolume)}
                 </p>
-              </div>
-              <div className="global-markets">
+              </Col>
+              <Col className="global-markets">
                 <p className="stats-title">Total Markets</p>
                 <p className="stats-global">
                   {millify(globalStats.totalMarkets)}
                 </p>
-              </div>
+              </Col>
+            </Col>
             </div>
           </div>
           <div className="paragraph-crypto">

@@ -20,6 +20,10 @@
     padding-top: 15px !important;
   }
 
+  .metamask-title {
+    margin-top: 50px;
+  }
+
   .avatar-metamask {
     width: 60px;
     height: 60px;
@@ -80,21 +84,24 @@
   .platform-container {
     display: flex;
     align-items: center !important;
+    margin-top: 50px !important;
+    margin-bottom: 50px;
 
     .platform-col {
       display: flex;
 
       h2 {
-        margin-right: 80px !important;
+        margin: auto !important;
+        width: 80%;
       }
 
       .binance-card {
-        width: 60%;
+        width: 80%;
         margin: auto !important;
       }
 
       .opensea-card {
-        width: 80%;
+        width: 110%;
         padding-right: 90px !important;
       }
     }
